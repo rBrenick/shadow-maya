@@ -8,7 +8,7 @@ setuptools.setup(
     version="0.00.01",
     author="Richard Brenick",
     author_email="RichardBrenick@gmail.com",
-    description="qt tool template",
+    description="Hidden Maya instance in the background",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/rBrenick/shadow-maya",
@@ -19,6 +19,9 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
+    install_requires=[
+        "git+https://github.com/EmbarkStudios/skyhook/",
+    ]
 )
 
 
