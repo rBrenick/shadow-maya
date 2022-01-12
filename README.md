@@ -1,8 +1,14 @@
 # shadow-maya
-Template for a basic Qt tool for DCCs
+What if we put a Maya inside your Maya?
 
-![tool header image](docs/header_image.png)
+Basically have a separate instance of Maya for heavy tasks. Things we don't want taking up the current session.
 
+Like:
+- Long exports
+- Destructive scene operations
+- Basically anything you would send to a batch machine
+
+This system uses [skyhook](https://github.com/EmbarkStudios/skyhook/) to communicate with the instance.
 
 # Install
 
@@ -13,14 +19,16 @@ Template for a basic Qt tool for DCCs
 3. Restart the DCC
 </pre>
 
-# Start the tool
-1. Run this script in a python tab in maya
-
+# Using the system
 <pre>
-
 import shadow_maya
-shadow_maya.main()
+sm = shadow_maya.main()
 
+# Open the current maya scene in the ShadowMaya instance 
+sm.open_current_maya_scene()
+
+# Execute arbitrary python in the ShadowMaya instance
+sm.client.execute("execute_python", {"python_script": "print('Eyo')"})
 </pre>
 
 
